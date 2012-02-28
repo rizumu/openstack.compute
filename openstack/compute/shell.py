@@ -262,7 +262,7 @@ class ComputeShell(object):
 
         if keyfile:
             try:
-                files['/root/.ssh/authorized_keys2'] = open(keyfile)
+                files['/root/.ssh/authorized_keys'] = open(keyfile)
             except IOError, e:
                 raise CommandError("Can't open '%s': %s" % (keyfile, e))
 

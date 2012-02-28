@@ -104,7 +104,7 @@ def test_boot_key_auto():
             'POST', '/servers',
             {'server': {'flavorId': 1, 'name': 'some-server', 'imageId': 1,
                         'personality': [{
-                            'path': '/root/.ssh/authorized_keys2',
+                            'path': '/root/.ssh/authorized_keys',
                             'contents': ('SSHKEY').encode('base64')},
                         ]}
             }
@@ -129,7 +129,7 @@ def test_boot_key_file():
         'POST', '/servers',
         {'server': {'flavorId': 1, 'name': 'some-server', 'imageId': 1,
                     'personality': [
-                        {'path': '/root/.ssh/authorized_keys2', 'contents': expected_file_data},
+                        {'path': '/root/.ssh/authorized_keys', 'contents': expected_file_data},
                     ]}
         }
     )
